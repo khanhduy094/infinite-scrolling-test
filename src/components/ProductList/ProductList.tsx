@@ -13,7 +13,7 @@ export default function ProductList() {
   const [search, setSearch] = useState("");
   const debounceSearchValue = useDebounce(search, 500);
   const { data, hasNextPage, fetchNextPage } = useInfiniteQuery(
-    ["repositories", debounceSearchValue],
+    ["products", debounceSearchValue],
     ({ pageParam = 0 }) => {
       return fetchRepositories(pageParam, LIMIT, debounceSearchValue);
     },
